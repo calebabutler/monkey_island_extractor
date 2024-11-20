@@ -1,5 +1,5 @@
 [build-system]
-requires = ["flit_core>=3.4"]
+requires = ["flit_core>=3.4,<4.0", "beaupy>=3.9.2,<4.0.0"]
 build-backend = "flit_core.buildapi"
 
 [project]
