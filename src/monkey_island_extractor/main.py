@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import sys
 import platform
-import typing
 import os
+from typing import Never
 from monkey_island_extractor import pak_file_extractor
 from beaupy import prompt, select
 from rich.console import Console
@@ -35,7 +35,7 @@ def get_game_path(args: list[str], default_path_table: dict[str, str]) -> str:
     return path
 
 
-def extract_monkey_island1(args: list[str]) -> typing.NoReturn:
+def extract_monkey_island1(args: list[str]) -> Never:
     game_path = get_game_path(args, default_path_table_for_monkey_island1)
     pak_file_extractor.run(pak_file_extractor.Config(
         game_path=game_path,
@@ -53,7 +53,7 @@ def extract_monkey_island1(args: list[str]) -> typing.NoReturn:
     ))
 
 
-def extract_monkey_island2(args: list[str]) -> typing.NoReturn:
+def extract_monkey_island2(args: list[str]) -> Never:
     game_path = get_game_path(args, default_path_table_for_monkey_island2)
     pak_file_extractor.run(pak_file_extractor.Config(
         game_path=game_path,
@@ -71,7 +71,7 @@ def extract_monkey_island2(args: list[str]) -> typing.NoReturn:
     ))
 
 
-def main(args: list[str]) -> typing.NoReturn:
+def main(args: list[str]) -> Never:
     games = [
         'The Secret of Monkey Island: Special Edition',
         'Monkey Island 2: Special Edition',

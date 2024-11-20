@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from dataclasses import dataclass
+from typing import Never
 import io
-import typing
 import struct
 import os
 
@@ -93,14 +93,14 @@ def read_file_names(file_entries: list[FileEntry], header: Header, pak_file: io.
     return file_names
 
 
-def extract_file(source_file: str, destination_file: str, file_entries: list[FileEntry], file_names: list[str], header: Header, pak_file: io.BufferedReader) -> typing.NoReturn:
+def extract_file(source_file: str, destination_file: str, file_entries: list[FileEntry], file_names: list[str], header: Header, pak_file: io.BufferedReader) -> Never:
     source_file_index = file_names.index(source_file)
     pak_file.seek(header.start_of_data + file_entries[source_file_index].file_data_pos, os.SEEK_SET)
     with open(destination_file, 'wb') as extracted_file:
         extracted_file.write(pak_file.read(file_entries[source_file_index].data_size))
 
 
-def run(config: Config) -> typing.NoReturn:
+def run(config: Config) -> Never:
     with open(os.path.join(config.game_path, config.pak_file_name), 'rb') as pak_file:
         header = read_header(pak_file)
         file_entries = read_file_entries(header, pak_file)

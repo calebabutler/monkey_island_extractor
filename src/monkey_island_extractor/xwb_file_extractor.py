@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from dataclasses import dataclass
-import typing
+from typing import Never
 
 # Types
 
@@ -17,5 +17,5 @@ class Config:
 
 # Functions
 
-def run(config: Config) -> typing.NoReturn:
+def run(config: Config) -> Never:
     pass
