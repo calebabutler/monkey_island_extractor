@@ -5,4 +5,4 @@ ScummVM from the _The Secret of Monkey Island: Special Edition_ and
 _Monkey Island 2: Special Edition_ games on Steam.
 '''
 
-__version__ = '1.0'
+__version__ = '0.1'
