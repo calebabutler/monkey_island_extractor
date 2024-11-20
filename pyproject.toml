@@ -1,0 +1,14 @@
+[build-system]
+requires = ["flit_core>=3.4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "monkey_island_extractor"
+authors = [{name = "Caleb Butler", email = "butlercq@gmail.com"}]
+dynamic = ["version", "description"]
+
+[project.urls]
+Home = "https://github.com/calebabutler/monkey_island_extractor"
+
+[project.scripts]
+monkey_island_extractor = "monkey_island_extractor:main"
