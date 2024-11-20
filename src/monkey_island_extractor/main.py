@@ -4,8 +4,7 @@ import platform
 import typing
 import os
 from monkey_island_extractor import pak_file_extractor
-from beaupy import confirm, prompt, select, select_multiple
-from beaupy.spinners import *
+from beaupy import prompt, select
 from rich.console import Console
 
 # Globals
@@ -70,6 +69,7 @@ def extract_monkey_island2(args: list[str]) -> typing.NoReturn:
             ),
         ],
     ))
+
 
 def main(args: list[str]) -> typing.NoReturn:
     games = [
